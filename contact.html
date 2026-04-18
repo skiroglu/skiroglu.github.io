@@ -9,15 +9,24 @@
 <body>
 <div class="site-wrapper">
   <aside class="sidebar">
-    <img src="image.jpeg" alt="Suleyman Kiroglu" class="avatar" onerror="this.style.display='none';document.getElementById('avatar-fallback').style.display='flex'">
-    <div class="avatar-placeholder" id="avatar-fallback" style="display:none">SK</div>
+    <img src="image.jpeg" alt="Suleyman Kiroglu" class="avatar" onerror="this.style.display='none';document.getElementById('av').style.display='flex'">
+    <div class="avatar-placeholder" id="av" style="display:none">SK</div>
     <h1>Suleyman Kiroglu</h1>
-    <div class="title-line">PhD Student, Sociology</div>
-    <div class="location">University of Colorado Boulder</div>
+    <div class="title-line">PhD Student in Sociology</div>
+    <div class="location">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      Boulder, CO
+    </div>
     <ul class="sidebar-links">
-      <li><a href="mailto:suleyman.kiroglu@colorado.edu">✉ suleyman.kiroglu@colorado.edu</a></li>
-      <li><a href="https://github.com/suleymankiroglu" target="_blank">⌥ github.com/suleymankiroglu</a></li>
-      <li><a href="https://orcid.org/0000-0001-6714-0305" target="_blank">◎ ORCID</a></li>
+      <li><a href="mailto:suleyman.kiroglu@colorado.edu">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        suleyman.kiroglu@colorado.edu</a></li>
+      <li><a href="https://github.com/skiroglu" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        github.com/skiroglu</a></li>
+      <li><a href="https://orcid.org/0000-0001-6714-0305" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.5 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm-.5 2h2v8H10V9.5zm3.5 0h1.5c2.2 0 3.5 1.3 3.5 4s-1.3 4-3.5 4H13.5V9.5zm1.5 6.5c1.4 0 2-.8 2-2.5s-.6-2.5-2-2.5H15v5h1z"/></svg>
+        ORCID</a></li>
     </ul>
     <nav>
       <a href="index.html">About</a>
@@ -33,27 +42,30 @@
 
     <p>I welcome inquiries about my research, potential collaborations, or academic matters.</p>
 
-    <h2>Email</h2>
-    <div class="contact-row">
-      <a href="mailto:suleyman.kiroglu@colorado.edu">suleyman.kiroglu@colorado.edu</a>
-    </div>
-
-    <h2>Location</h2>
-    <div class="contact-row" style="display:block;font-family:sans-serif;font-size:0.95rem;line-height:1.8">
-      Department of Sociology<br>
-      University of Colorado Boulder<br>
-      Boulder, CO, USA
+    <div class="contact-block">
+      <div class="contact-row">
+        <span class="contact-label">Email</span>
+        <a href="mailto:suleyman.kiroglu@colorado.edu">suleyman.kiroglu@colorado.edu</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">Location</span>
+        <span>Department of Sociology, University of Colorado Boulder, Boulder, CO</span>
+      </div>
     </div>
 
     <h2>Online Profiles</h2>
-    <div class="contact-row">
-      <span class="contact-label">ORCID</span>
-      <a href="https://orcid.org/0000-0001-6714-0305" target="_blank">0000-0001-6714-0305</a>
+    <div class="contact-block">
+      <div class="contact-row">
+        <span class="contact-label">ORCID</span>
+        <a href="https://orcid.org/0000-0001-6714-0305" target="_blank">0000-0001-6714-0305</a>
+      </div>
+      <div class="contact-row">
+        <span class="contact-label">GitHub</span>
+        <a href="https://github.com/skiroglu" target="_blank">github.com/skiroglu</a>
+      </div>
     </div>
-    <div class="contact-row">
-      <span class="contact-label">GitHub</span>
-      <a href="https://github.com/suleymankiroglu" target="_blank">github.com/suleymankiroglu</a>
-    </div>
+
+    <footer class="site-footer">&copy; 2026 Suleyman Kiroglu &middot; University of Colorado Boulder</footer>
   </main>
 </div>
 </body>
