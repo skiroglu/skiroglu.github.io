@@ -315,7 +315,7 @@ const nav = document.getElementById('sitenav');
 window.addEventListener('scroll', () => {
   const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
   bar.style.width = pct + '%';
-  nav.classList.toggle('visible', window.scrollY > 80);
+  nav.classList.toggle('scrolled', window.scrollY > 20);
 });
 
 // Scroll reveal
