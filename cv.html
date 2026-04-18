@@ -7,67 +7,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="site-wrapper">
-  <aside class="sidebar">
-    <img src="image.jpeg" alt="Suleyman Kiroglu" class="avatar" onerror="this.style.display='none';document.getElementById('avatar-fallback').style.display='flex'">
-    <div class="avatar-placeholder" id="avatar-fallback" style="display:none">SK</div>
-    <h1>Suleyman Kiroglu</h1>
-    <div class="title-line">PhD Student, Sociology</div>
-    <div class="location">University of Colorado Boulder</div>
-    <ul class="sidebar-links">
-      <li><a href="mailto:suleyman.kiroglu@colorado.edu">✉ suleyman.kiroglu@colorado.edu</a></li>
-      <li><a href="https://github.com/skiroglu" target="_blank">⌥ github.com/skiroglu</a></li>
-      <li><a href="https://orcid.org/0000-0001-6714-0305" target="_blank">◎ ORCID</a></li>
-    </ul>
+<nav class="site-nav visible" id="sitenav">
+  <a class="nav-name" href="index.html">Suleyman Kiroglu</a>
+  <ul class="nav-links">
+    <li><a href="index.html#research">Research</a></li>
+    <li><a href="index.html#publications">Publications</a></li>
+    <li><a href="index.html#education">Education</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<div class="subpage-wrapper">
+  <aside class="subpage-sidebar">
+    <img src="image.jpeg" alt="Suleyman Kiroglu" class="avatar" onerror="this.style.display='none'">
+    <h2>Suleyman Kiroglu</h2>
+    <div class="sub-title">PhD Student in Sociology<br>University of Colorado Boulder</div>
     <nav>
-      <a href="index.html">About</a>
+      <a href="index.html">← Home</a>
       <a href="cv.html" class="active">CV</a>
       <a href="research.html">Research</a>
       <a href="teaching.html">Teaching</a>
       <a href="contact.html">Contact</a>
     </nav>
   </aside>
-
-  <main class="main">
-    <h1 class="page-title">Curriculum Vitae</h1>
-
-    <a class="btn" href="../files/cv.pdf" target="_blank">↓ Download CV (PDF)</a>
-
+  <main class="subpage-main">
+    <h1 class="subpage-title">Curriculum Vitae</h1>
+    <a class="btn" href="cv.pdf" target="_blank">&#8595; Download CV (PDF)</a>
     <h2>Education</h2>
-    <div class="edu-item">
-      <div class="degree">Ph.D., Sociology</div>
-      <div class="school">University of Colorado Boulder &mdash; In Progress</div>
-    </div>
-    <div class="edu-item">
-    </div>
-    <div class="edu-item">
-      <div class="degree">M.A., Near Eastern Studies</div>
-      <div class="school">New York University &mdash; May 2023</div>
-    </div>
-    <div class="edu-item">
-      <div class="degree">M.A., Sociology</div>
-      <div class="school">Marmara University, Istanbul, Turkey &mdash; Nov. 2020</div>
-    </div>
-    <div class="edu-item">
-      <div class="degree">B.A., Theology</div>
-      <div class="school">Marmara University, Istanbul, Turkey &mdash; Jul. 2018<br>
-      <em style="font-size:0.85rem">Study Abroad: The National University of Malaysia</em></div>
-    </div>
-
+    <div class="edu-item"><div class="degree">Ph.D., Sociology</div><div class="school">University of Colorado Boulder &mdash; In Progress</div></div>
+    <div class="edu-item"><div class="degree">M.A., Near Eastern Studies</div><div class="school">New York University &mdash; May 2023</div></div>
+    <div class="edu-item"><div class="degree">M.A., Sociology</div><div class="school">Marmara University, Istanbul, Turkey &mdash; Nov. 2020</div></div>
+    <div class="edu-item"><div class="degree">B.A., Theology</div><div class="school">Marmara University, Istanbul, Turkey &mdash; Jul. 2018<br><em style="font-size:0.82rem">Study Abroad: The National University of Malaysia</em></div></div>
     <h2>Research Experience</h2>
-    <p style="font-family:sans-serif;font-size:0.95rem">
-      <strong>Research Assistant</strong> — University of Colorado Population Center (CUPC), 2025–Present<br>
-      <span style="color:#555;font-size:0.9rem">Project: Early Life Mortality Trends in the US, 1980–2024</span>
-    </p>
-
+    <div class="exp-item"><div class="exp-title">Research Assistant</div><div class="exp-org">University of Colorado Population Center (CUPC) &mdash; 2025&ndash;Present</div><div class="exp-note">Project: Early Life Mortality Trends in the US, 1980&ndash;2024</div></div>
     <h2>Professional Experience</h2>
-    <p style="font-family:sans-serif;font-size:0.95rem">
-      <strong>Finance &amp; Data Analyst</strong> — Institute of Behavioral Science, CU Boulder, May–Aug. 2025
-    </p>
-    <p style="font-family:sans-serif;font-size:0.95rem">
-      <strong>Research Analyst</strong> — Foreign Policy Research Institute (FPRI), Feb.–Aug. 2023
-    </p>
-
+    <div class="exp-item"><div class="exp-title">Finance &amp; Data Analyst</div><div class="exp-org">Institute of Behavioral Science, CU Boulder &mdash; May&ndash;Aug. 2025</div></div>
+    <div class="exp-item"><div class="exp-title">Research Analyst</div><div class="exp-org">Foreign Policy Research Institute (FPRI) &mdash; Feb.&ndash;Aug. 2023</div></div>
     <h2>Grants &amp; Fellowships</h2>
     <table class="awards">
       <tr><td>Department of Sociology Summer Research Grant, CU Boulder ($4,000)</td><td>2025</td></tr>
@@ -78,28 +53,13 @@
       <tr><td>GSAS Tuition Scholarship, NYU ($61,696)</td><td>2021</td></tr>
       <tr><td>Erasmus+ Traineeship Grant, European Union ($2,000)</td><td>2019</td></tr>
     </table>
-
     <h2>Professional Affiliations</h2>
-    <ul class="clean">
-      <li>American Sociological Association, 2025–Present</li>
-      <li>Population Association of America, 2024–Present</li>
-    </ul>
-
+    <ul class="clean"><li>American Sociological Association, 2025&ndash;Present</li><li>Population Association of America, 2024&ndash;Present</li></ul>
     <h2>Technical Skills</h2>
-    <div class="interests-grid" style="margin-top:0.5rem">
-      <span class="tag">Python</span>
-      <span class="tag">SQL</span>
-      <span class="tag">Stata</span>
-      <span class="tag">ArcGIS</span>
-      <span class="tag">Power BI</span>
-    </div>
-
+    <div class="tag-row"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Stata</span><span class="tag">ArcGIS</span><span class="tag">Power BI</span></div>
     <h2>Languages</h2>
-    <div class="interests-grid" style="margin-top:0.5rem">
-      <span class="tag">English</span>
-      <span class="tag">Turkish</span>
-      <span class="tag">Arabic</span>
-    </div>
+    <div class="tag-row"><span class="tag">English</span><span class="tag">Turkish</span><span class="tag">Arabic</span></div>
+    <div class="subpage-footer">&copy; 2026 Suleyman Kiroglu &middot; University of Colorado Boulder</div>
   </main>
 </div>
 </body>
