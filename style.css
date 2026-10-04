@@ -409,6 +409,121 @@ main { flex: 1 0 auto; width: 100%; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--accent); }
 
+/* ---------- research page ---------- */
+
+/* the research page's content runs wider than text pages to give figures room;
+   header and footer keep the site-wide width so they don't shift between pages */
+.page-research main.wrap { max-width: calc(1240px + 2 * var(--gutter)); }
+.page-research .page-head {
+  grid-template-columns: minmax(0, 1fr);
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+.page-research .page-head .lede { grid-column: 1; max-width: 52rem; }
+
+.research-theme { padding-bottom: clamp(3rem, 8vw, 6rem); }
+.research-theme + .research-theme { padding-top: clamp(2.5rem, 5vw, 3rem); }
+.research-theme > h2 {
+  margin: 0 0 clamp(2.5rem, 5vw, 3.75rem);
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* project: text (40%) | figure (60%) */
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 40fr) minmax(0, 60fr);
+  column-gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.project + .project { margin-top: clamp(5rem, 10vw, 8.5rem); }
+.project-text { min-width: 0; }
+.project-text h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 1.1rem + 1vw, 1.875rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.project-subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.project-meta {
+  margin: 0.85rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+.project-meta.is-published { color: var(--ink); }   /* published reads firmer than manuscripts */
+.project-desc { margin: 1.5rem 0 0; }
+.project-facts { margin: 1.75rem 0 0; }
+.project-facts dt {
+  margin: 1.1rem 0 0.25rem;
+  font-family: var(--sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.project-facts dt:first-child { margin-top: 0; }
+.project-facts dd { margin: 0; }
+.project-facts .method {                              /* method stays subordinate to the finding */
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.project-link {
+  margin: 1.5rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+}
+.project-figure { margin: 0; min-width: 0; padding-top: 0.35rem; }
+
+/* ---------- research figures (assets/viz) ---------- */
+
+.viz-canvas { width: 100%; }
+.viz-canvas svg { display: block; width: 100%; height: auto; overflow: visible; }
+.viz-meta {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.viz-toggle {
+  padding: 0.4rem 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--muted);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+.viz-toggle:hover { color: var(--accent); }
+
+/* SVG text: text tokens only, never a series colour */
+.viz-canvas text { font-family: var(--sans); }
+.t-lab    { font-size: 13px; font-weight: 500; fill: var(--ink); }
+.t-muted  { font-size: 12px; fill: var(--muted); }
+.t-stage  { font-size: 12px; fill: var(--muted); letter-spacing: 0.02em; }
+.t-halo   { paint-order: stroke; stroke: var(--bg); stroke-width: 3px; stroke-linejoin: round; }
+.t-period { font-size: 11px; font-weight: 500; fill: var(--muted); letter-spacing: 0.08em; }
+
 /* ---------- narrow screens ---------- */
 
 @media (max-width: 52rem) {
@@ -446,4 +561,10 @@ main { flex: 1 0 auto; width: 100%; }
   body { background: #fff; font-size: 11pt; }
   .section { border-top-color: #ccc; }
   a { color: inherit; text-decoration: none; }
+}
+
+@media (max-width: 60rem) {
+  .project { grid-template-columns: minmax(0, 1fr); }
+  .project-text { max-width: var(--prose-col); }
+  .project-figure { margin-top: 2rem; padding-top: 0; }
 }
