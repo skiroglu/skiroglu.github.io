@@ -1,0 +1,172 @@
+% ==========================================================================
+%  Curriculum vitae — Suleyman Kiroglu
+%
+%  This file is the source for cv.pdf, which the website links to.
+%  To update:  edit this file, then from the repository root run
+%
+%      latexmk -pdf cv.tex      (or: pdflatex cv.tex, twice)
+%
+%  Keep cv.html in sync with any content changes made here.
+% ==========================================================================
+
+\documentclass[11pt,letterpaper]{article}
+
+% ---- fonts: Source Serif for text, Source Sans for headings (as on the site)
+\usepackage[T1]{fontenc}
+\usepackage[lining,semibold]{sourceserifpro}
+\usepackage[scale=0.94,semibold]{sourcesanspro}
+\usepackage{microtype}
+
+% ---- layout
+\usepackage[letterpaper,margin=0.95in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hyperfootnotes=false]{hyperref}
+
+\definecolor{ink}{HTML}{1B1B1B}
+\definecolor{muted}{HTML}{5C5C5C}
+\definecolor{accent}{HTML}{1F5A5E}
+
+\hypersetup{
+  colorlinks = true,
+  urlcolor   = accent,
+  linkcolor  = ink,
+  pdftitle   = {Suleyman Kiroglu -- Curriculum Vitae},
+  pdfauthor  = {Suleyman Kiroglu},
+}
+
+\color{ink}
+\setlength{\parindent}{0pt}
+\linespread{1.06}
+\pagestyle{plain}
+
+% ---- section headings: sans, semibold, no rules
+\titleformat{\section}{\sffamily\large\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{15pt}{6pt}
+\titleformat{\subsection}{\sffamily\normalsize\bfseries\color{muted}}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{9pt}{4pt}
+
+% ---- helpers
+% \entry{title}{date}{details}: bold title, date at right, details below
+\newcommand{\entry}[3]{%
+  \textbf{#1}\hfill{\sffamily\small\color{muted}#2}\par
+  #3\par\medskip}
+% \dated{text}{date}: one line with the date at right
+\newcommand{\dated}[2]{#1\hfill{\sffamily\small\color{muted}#2}\par\smallskip}
+% own name in citations
+\newcommand{\me}[1]{\textbf{#1}}
+\newcommand{\sep}{\enspace\textperiodcentered\enspace}
+
+% citations with a hanging indent
+\newlist{cites}{itemize}{1}
+\setlist[cites]{label={}, leftmargin=1.5em, itemindent=-1.5em,
+  labelsep=0pt, labelwidth=0pt, itemsep=5pt, topsep=2pt, parsep=0pt,
+  before=\raggedright}
+% keep each DOI on one line
+\newcommand{\doi}[1]{\mbox{\href{https://doi.org/#1}{doi:#1}}}
+\hyphenation{preparation}
+
+\begin{document}
+
+% ---- header
+{\sffamily\fontsize{21}{25}\selectfont Suleyman Kiroglu}\par
+\vspace{6pt}
+{\small
+Department of Sociology, University of Colorado Boulder\par
+Ketchum Hall 482, Boulder, CO 80309\par
+(617) 455-2138\sep\href{mailto:suleyman.kiroglu@colorado.edu}{suleyman.kiroglu@colorado.edu}\par
+\href{https://skiroglu.com}{skiroglu.com}\sep
+\href{https://scholar.google.com/citations?user=0M_9ddcAAAAJ&hl=tr}{Google Scholar}\sep
+\href{https://www.linkedin.com/in/suleymankiroglu/}{LinkedIn}\sep
+\href{https://github.com/skiroglu}{GitHub}\sep
+\href{https://orcid.org/0000-0001-6714-0305}{ORCID 0000-0001-6714-0305}\par}
+
+% ---- research interests
+\section{Research Interests}
+Population Health; Social Demography; Migration
+
+% ---- education
+\section{Education}
+\entry{Ph.D., Sociology}{In progress}{University of Colorado Boulder}
+\entry{M.S., Computer Science}{In progress}{University of Colorado Boulder}
+\entry{M.A., Near Eastern Studies}{May 2023}{New York University}
+\entry{M.A., Sociology}{Nov.\ 2020}{Marmara University, Istanbul, Turkey}
+\entry{B.A., Theology}{Jul.\ 2018}{Marmara University, Istanbul, Turkey\\
+  Study abroad: The National University of Malaysia}
+
+% ---- research experience
+\section{Research Experience}
+\entry{Research Assistant}{2025--Present}{University of Colorado Population Center (CUPC)\\
+  Project: Early Life Mortality Trends in the US, 1980--2024}
+
+% ---- professional experience
+\section{Professional Experience}
+\entry{Finance \& Data Assistant}{May 2025--Aug.\ 2025}{Institute of Behavioral Science, CU Boulder}
+\entry{Research Analyst}{Feb.\ 2023--Aug.\ 2023}{Foreign Policy Research Institute (FPRI)}
+
+% ---- teaching
+\section{Teaching Experience}
+\textbf{Teaching Assistant}\par
+Department of Sociology, University of Colorado Boulder\par
+\smallskip
+\dated{Drugs in U.S. Society}{Fall 2026}
+\dated{Introduction to Sociology}{Fall 2025, Spring 2025, Fall 2024}
+\dated{Social Problems}{Spring 2024}
+\dated{United States Race and Ethnic Relations}{Fall 2023}
+
+% ---- publications
+\section{Publications}
+
+\subsection{Under Review \& In Preparation}
+\begin{cites}
+  \item Masters, Ryan K., and \me{Süleyman Kıroğlu}. ``The Effects of Immigration
+    and Domestic Migration on U.S. State Life Expectancy Trends.'' Manuscript in preparation.
+  \item Masters, Ryan K., \me{Süleyman Kıroğlu}, Iliya Gutin, Lucy Merrill, Rick Rogers,
+    and Bob Hummer. ``Early-life Mortality and the Widening U.S.-Peer Longevity Gap.''
+    Manuscript in preparation.
+  \item ``Economic Connectedness and Premature Adult Mortality Across U.S. Areas.''
+    Manuscript in preparation.
+\end{cites}
+
+\subsection{Published}
+\begin{cites}
+  \item \me{Kıroğlu, Süleyman}, and Hüseyin Zeyd Koytak. 2026. ``Rural Notables,
+    Professionals, and Ideologues: The Social Bases of AKP Local Power.''
+    \textit{European Politics and Society}: 1--13.
+    \doi{10.1080/23745118.2026.2620579}.
+  \item \me{Kıroğlu, Süleyman}, and Hüseyin Zeyd Koytak. 2024. ``Mapping Solidarity:
+    Organizational Density of Hometown Associations in Istanbul.''
+    \textit{Turkish Studies} 25(4): 652--672.
+    \doi{10.1080/14683849.2024.2340497}.
+\end{cites}
+
+\subsection{Research Presentations}
+\begin{cites}
+  \item \me{Kıroğlu, Süleyman}. 2025. ``Who Brokers? Representation, Brokerage and Social
+    Capital in Local Politics.'' Presented at the American Sociological Association
+    Annual Meeting, Chicago, IL.
+  \item \me{Kıroğlu, Süleyman}, and Hüseyin Zeyd Koytak. 2025. ``Who Brokers?
+    Representation, Brokerage and Social Capital in the Turkish City.'' Presented at the
+    Foundation for Sciences and Arts, Turkey.
+  \item \me{Kıroğlu, Süleyman}, and Hüseyin Zeyd Koytak. 2024. ``Hometown Associations and
+    Organizational Cohesion of Internal Migrants in Istanbul.'' Presented at the Population
+    Association of America Annual Meeting, Columbus, OH.
+  \item \me{Kıroğlu, Süleyman}, and Hüseyin Zeyd Koytak. 2022. ``Classification,
+    Organization, Distribution and Density of Hometown Associations in Istanbul.''
+    Presented at the Migration Studies Graduate Student Conference, Istanbul Bilgi
+    University, Turkey.
+\end{cites}
+
+% ---- affiliations
+\section{Professional Affiliations}
+\dated{American Sociological Association}{2025--Present}
+\dated{Population Association of America}{2024--Present}
+
+% ---- skills
+\section{Skills \& Languages}
+\textbf{Technical:} Python, Stata, ArcGIS, Power BI\par
+\smallskip
+\textbf{Languages:} English, Turkish, Arabic
+
+\end{document}
