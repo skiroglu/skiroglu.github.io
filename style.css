@@ -233,6 +233,35 @@ main { flex: 1 0 auto; width: 100%; }
 
 .intro .lede { grid-column: 2; grid-row: 1 / span 2; }
 
+/* ---------- editorial artwork ---------- */
+
+/* Static, decorative square drawings. They sit in the label column, like the
+   About portrait, and stay smaller than it so the portrait remains the main image. */
+.editorial-art { margin: 0; }
+.editorial-art img { display: block; width: 100%; height: auto; }
+
+/* homepage sections: artwork under the section label */
+.section.has-art { grid-template-rows: auto 1fr; }
+.section.has-art > .editorial-art {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  max-width: 10.5rem;
+  margin-top: 1.25rem;
+}
+.section.has-art > .section-body { grid-column: 2; grid-row: 1 / span 2; }
+
+/* page introductions: artwork in the label column, beside the intro text */
+.page-head.has-art .lede { grid-row: 2; }
+.page-head.has-art > .editorial-art {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+  max-width: 10rem;
+  margin-top: 0.35rem;
+}
+.page-head.has-art > .editorial-art.is-quiet { max-width: 8rem; }
+
 .page-head .lede > .quick-links:first-child { margin-top: 0; }
 
 .quick-links {
@@ -419,6 +448,8 @@ main { flex: 1 0 auto; width: 100%; }
   padding-bottom: clamp(3rem, 7vw, 5rem);
 }
 .page-research .page-head .lede { grid-column: 1; max-width: 52rem; }
+.page-research .page-head.has-art { grid-template-columns: minmax(0, var(--label-col)) minmax(0, 52rem); column-gap: var(--col-gap); }
+.page-research .page-head.has-art .lede { grid-column: 2; }
 
 .research-theme { padding-bottom: clamp(3rem, 8vw, 6rem); }
 .research-theme + .research-theme { padding-top: clamp(2.5rem, 5vw, 3rem); }
@@ -546,6 +577,16 @@ main { flex: 1 0 auto; width: 100%; }
     max-width: 9.5rem;
     margin: 0 0 1.4rem;
   }
+
+  /* artwork stacks: under the label on the homepage, after the intro text on pages */
+  .section.has-art { grid-template-rows: none; }
+  .section.has-art > .editorial-art { grid-row: auto; max-width: 8rem; margin: 0 0 1.4rem; }
+  .section.has-art > .section-body { grid-column: 1; grid-row: auto; }
+  .page-research .page-head.has-art { grid-template-columns: minmax(0, 1fr); }
+  .page-research .page-head.has-art .lede { grid-column: 1; }
+  .page-head.has-art .lede { grid-row: auto; }
+  .page-head.has-art > .editorial-art { grid-row: auto; max-width: 8rem; margin-top: 1.75rem; }
+  .page-head.has-art > .editorial-art.is-quiet { max-width: 6.5rem; }
 }
 
 @media (max-width: 30rem) {
