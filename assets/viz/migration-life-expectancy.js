@@ -19,14 +19,15 @@
 
     build(svg, W) {
       const compact = W < 640;
-      const gap = compact ? 0 : 40, panelW = compact ? W : (W - gap) / 2;
+      const yl = 16, foot = 18;                       // room for the y- and x-axis labels
+      const gap = compact ? 0 : 40, panelW = compact ? W - yl : (W - yl - gap) / 2;
       const left = 26, rowH = compact ? 112 : 128, rowGap = 50, head = 48;
       const keyH = compact ? 76 : 38;
       const panelH = head + 2 * (rowH + 22) + rowGap - 22 + 8;
-      const H = keyH + (compact ? 2 * panelH + 18 : panelH);
+      const H = keyH + (compact ? 2 * panelH + 18 : panelH) + foot;
 
       // shared key
-      const key = el('g', { transform: 'translate(0,12)' }, svg);
+      const key = el('g', { transform: `translate(${yl},12)` }, svg);
       let kx = 0;
       COMP.forEach((c, i) => {
         const ky = compact ? i * 16 : 0;
@@ -38,7 +39,7 @@
 
       const curves = [], frames = [];
       ['F', 'M'].forEach((sex, p) => {
-        const ox = compact ? 0 : p * (panelW + gap), oy = keyH + (compact ? p * (panelH + 18) : 0);
+        const ox = yl + (compact ? 0 : p * (panelW + gap)), oy = keyH + (compact ? p * (panelH + 18) : 0);
         const g = el('g', { transform: `translate(${ox},${oy})` }, svg);
         frames.push(g);
         text(g, 0, 16, sex === 'M' ? 'Male' : 'Female', 't-lab');
@@ -66,6 +67,17 @@
           });
         });
       });
+
+      // shared axis labels: y beside the leftmost panel (each stacked panel when compact), x along the bottom
+      const plotTop = head + 22, plotBot = plotTop + 2 * rowH + rowGap;
+      const axes = el('g', {}, svg);
+      frames.push(axes);
+      (compact ? [0, 1] : [0]).forEach((p) => {
+        const cy = keyH + (compact ? p * (panelH + 18) : 0) + (plotTop + plotBot) / 2;
+        const t = text(axes, 11, cy, 'Change in life expectancy (years)', 't-muted', 'middle');
+        t.setAttribute('transform', `rotate(-90 11 ${cy})`);
+      });
+      text(axes, (yl + left + W) / 2, H - 6, 'Migration-related population change', 't-muted', 'middle');
 
       function draw(t, still) {
         const fade = still ? 0 : seg(t, 0.93, 0.99);
